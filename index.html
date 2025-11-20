@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Ambulance - Driver Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+</head>
+<body>
+  <nav>
+    <div class="logo">🚑 Smart Ambulance - Driver Dashboard</div>
+  </nav>
+
+  <div class="panel no-rotate">
+    <h2>Ambulance Location & Route</h2>
+    <div id="mapContainer">
+      <div id="leafletMap" style="height:400px;"></div>
+      <div id="gpsStatus">🛰 Waiting for GPS data...</div>
+    </div>
+    <div class="map-controls">
+      <button onclick="setMapType('osm')">🗺 Roadmap</button>
+      <button onclick="setMapType('satellite')">🛰 Satellite</button>
+      <button onclick="setMapType('hybrid')">🌍 Hybrid</button>
+    </div>
+    <p id="hospitalName">No hospital selected</p>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
