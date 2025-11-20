@@ -1,0 +1,110 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: linear-gradient(to right, #bbecf5, #aadde0);
+  color: #333;
+}
+
+nav {
+  background: #be07c4;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 900;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.panel {
+  background: white;
+  margin: 50px auto 20px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  width: 96%;
+  max-width: 13200px;
+  display: block;
+  transform: perspective(800px) rotateY(5deg);
+  transition: transform 0.6s ease, box-shadow 0.6s ease, opacity 0.6s ease;
+  opacity: 1;
+  cursor: pointer; 
+}
+
+.panel:hover {
+  transform: perspective(800px) rotateY(0deg) scale(1.03);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Prevent rotation for map panel */
+.panel.no-rotate {
+  transform: none;
+  transition: none;
+  cursor: default;
+}
+
+.panel.no-rotate:hover {
+  transform: none;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.map-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.map-controls button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.map-controls button:hover {
+  background: #0d47a1;
+}
+
+#leafletMap {
+  width: 100%;
+  height: 340px; 
+  border-radius: 0 0 10px 10px;
+}
+
+#mapContainer {
+  position: relative;
+}
+
+#gpsStatus {
+  margin-top: 8px;
+  background: rgba(255,255,255,0.9);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+#hospitalName {
+  font-size: 18px;
+  color: #d32f2f;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
